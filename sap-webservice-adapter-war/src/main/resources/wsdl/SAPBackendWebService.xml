@@ -1,0 +1,147 @@
+<?xml version="1.0" ?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.avoodoo.com/sap-webservice-war/SAPBackendWebService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SAPBackendWebService" targetNamespace="http://www.avoodoo.com/sap-webservice-war/SAPBackendWebService">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.avoodoo.com/sap-webservice-war/SAPBackendWebService" elementFormDefault="unqualified" targetNamespace="http://www.avoodoo.com/sap-webservice-war/SAPBackendWebService" version="1.0">
+
+  <xs:element name="Z_EV_INSOBJECT_EXKASSO_DETAILSException" type="tns:zevinsobjectexkassodetailsException"></xs:element>
+
+  <xs:element name="getExkassoDETAILS" type="tns:getExkassoDETAILS"></xs:element>
+
+  <xs:element name="getExkassoDETAILSResponse" type="tns:getExkassoDETAILSResponse"></xs:element>
+
+  <xs:element name="isAlive" type="tns:isAlive"></xs:element>
+
+  <xs:element name="isAliveResponse" type="tns:isAliveResponse"></xs:element>
+
+  <xs:complexType name="isAlive">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isAliveResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsAliveResponse" type="tns:isAliveResponseWs"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isAliveResponseWs">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getExkassoDETAILS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Z_EV_INSOBJECT_EXKASSO_DETAILS" type="tns:exkassodetails"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="exkassodetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="resquestName" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getExkassoDETAILSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Z_EV_INSOBJECT_EXKASSO_DETAILSResponse" type="tns:exkassodetailsResponse"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="exkassodetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="responeName" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="zevinsobjectexkassodetailsException">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="Text" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="Message" type="tns:message"></xs:element>
+      <xs:element minOccurs="0" name="Attributes" type="tns:attributes"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="message">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="Number" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="attributes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="V1" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="V2" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="V3" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="V4" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="isAliveResponse">
+    <wsdl:part element="tns:isAliveResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getExkassoDETAILSResponse">
+    <wsdl:part element="tns:getExkassoDETAILSResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getExkassoDETAILS">
+    <wsdl:part element="tns:getExkassoDETAILS" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RfcZEVINSOBJECTEXKASSODETAILSException">
+    <wsdl:part element="tns:Z_EV_INSOBJECT_EXKASSO_DETAILSException" name="RfcZEVINSOBJECTEXKASSODETAILSException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isAlive">
+    <wsdl:part element="tns:isAlive" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SAPBackendWs">
+    <wsdl:operation name="isAlive">
+      <wsdl:input message="tns:isAlive" name="isAlive">
+    </wsdl:input>
+      <wsdl:output message="tns:isAliveResponse" name="isAliveResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExkassoDETAILS">
+      <wsdl:input message="tns:getExkassoDETAILS" name="getExkassoDETAILS">
+    </wsdl:input>
+      <wsdl:output message="tns:getExkassoDETAILSResponse" name="getExkassoDETAILSResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:RfcZEVINSOBJECTEXKASSODETAILSException" name="RfcZEVINSOBJECTEXKASSODETAILSException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SAPBackendWebServiceSoapBinding" type="tns:SAPBackendWs">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <wsdl:operation name="isAlive">
+      <soap:operation soapAction="isAlive" style="document"></soap:operation>
+      <wsdl:input name="isAlive">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="isAliveResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExkassoDETAILS">
+      <soap:operation soapAction="getExkassoDETAILS" style="document"></soap:operation>
+      <wsdl:input name="getExkassoDETAILS">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="getExkassoDETAILSResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+      <wsdl:fault name="RfcZEVINSOBJECTEXKASSODETAILSException">
+        <soap:fault name="RfcZEVINSOBJECTEXKASSODETAILSException" use="literal"></soap:fault>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SAPBackendWebService">
+    <wsdl:port binding="tns:SAPBackendWebServiceSoapBinding" name="SAPBackendWebServicePort">
+      <soap:address location="http://localhost:8080/sap-webservice-war/SAPBackendWebService"></soap:address>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
